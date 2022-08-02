@@ -117,7 +117,7 @@
 @@ LUA_32BITS enables Lua with 32-bit integers and 32-bit floats.
 */
 #define LUA_32BITS	0
-
+#define LLONG_MAX
 
 /*
 @@ LUA_C89_NUMBERS ensures that Lua uses the largest types available for
@@ -731,9 +731,9 @@
 ** (It must fit into max(size_t)/32.)
 */
 #if LUAI_IS32INT
-#define LUAI_MAXSTACK		1000000
+#define LUAI_MAXSTACK		4000
 #else
-#define LUAI_MAXSTACK		15000
+#define LUAI_MAXSTACK		4000
 #endif
 
 
