@@ -117,7 +117,9 @@
 @@ LUA_32BITS enables Lua with 32-bit integers and 32-bit floats.
 */
 #define LUA_32BITS	0
-#define LLONG_MAX
+#if !defined(LLONG_MAX)
+  #define LLONG_MAX
+#endif
 
 /*
 @@ LUA_C89_NUMBERS ensures that Lua uses the largest types available for
