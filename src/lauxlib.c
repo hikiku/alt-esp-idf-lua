@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "esp_heap_caps.h"
 
 /*
 ** This file uses only the official API of Lua.
@@ -1015,7 +1015,7 @@ static void *l_alloc (void *ud, void *ptr, size_t osize, size_t nsize) {
     return NULL;
   }
   else
-    return realloc(ptr, nsize);
+    return heap_caps_realloc(ptr, nsize, MALLOC_CAP_SPIRAM);
 }
 
 
